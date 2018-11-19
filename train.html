@@ -16,6 +16,81 @@
 
 <body>
 
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-2">Train Time</h1>
+          <p class="lead">Make your own train schedule.</p>
+        </div>
+      </div>
+
+  <div class="card">
+      <div class="card-header">
+        Trains
+      </div>
+      <div class="card-body">
+
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Train Name</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Frequency</th>
+              <th scope="col">Next Arrival</th>
+              <th scope="col">Minutes Away</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Fran</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>@fat</td>
+            </tr>
+          </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+          Add a Train -- Enter Train Information
+        </div>
+        <div class="card-body">
+      <form>
+          <div class="form-group">
+            <label for="trainName">Train Name</label>
+            <textarea class="form-control" id="trainName" rows="1"></textarea>
+
+            <label for="destination">Destination</label>
+            <textarea class="form-control" id="destination" rows="1"></textarea>
+
+            <label for="firstTrainTime">First Train Time</label>
+            <textarea class="form-control" id="firstTrainTime" rows="1"></textarea>
+
+            <label for="frequency">Frequency(min)</label>
+            <textarea class="form-control" id="frequency" rows="1"></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
 
@@ -45,5 +120,3 @@
   
   
   </script>
-
-traintimer-e3824
