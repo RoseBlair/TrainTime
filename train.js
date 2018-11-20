@@ -13,8 +13,8 @@ $(document).ready(function(){
     // variable to reference the database.
     var database = firebase.database();
 
-     ("#arrivalTrain1").text();
-     ("#minutesTrain1").text();
+    //  ("#arrivalTrain1").text();
+    //  ("#minutesTrain1").text();
 
 
     $("#submission").click(function() {
@@ -26,7 +26,8 @@ $(document).ready(function(){
         var firstTrainTime = $("#firstTrainTime").val().trim();
         var convertedTime = $(moment(firstTrainTime, 'HH:mm'));
         var frequency = $(parseInt("#frequency"));
-        var currentTime = $(moment().format("HH:mm"));
+        currentdate = new Date();
+        var currentTime = currentdate.getHours() + ":" + currentdate.getMinutes();
         console.log(currentTime);
 
         // var trainName = 
