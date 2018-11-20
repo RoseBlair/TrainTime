@@ -4,6 +4,18 @@
 
 <head>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Link to Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    
+    <!-- Link to firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+
+      <!--MOMENT JS-->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
   <meta charset="UTF-8">
   <title>Train Timer</title>
 
@@ -12,7 +24,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-</head>
+
+
+
+  </head>
 
 <body>
 
@@ -77,76 +92,27 @@
         <div class="card-body">
       <form>
           <div class="form-group">
-            <label for="trainName">Train Name</label>
+            <label for="label1">Train Name</label>
             <textarea class="form-control" id="trainName" rows="1"></textarea>
 
-            <label for="destination">Destination</label>
+            <label for="label2">Destination</label>
             <textarea class="form-control" id="destination" rows="1"></textarea>
 
-            <label for="firstTrainTime">First Train Time (HH:mm military time)</label>
+            <label for="label3">First Train Time (HH:mm military time)</label>
             <textarea class="form-control" id="firstTrainTime" rows="1"></textarea>
 
-            <label for="frequency">Frequency(min)</label>
+            <label for="label4">Frequency(min)</label>
             <textarea class="form-control" id="frequency" rows="1"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" id="submission">Submit</button>
+          <button type="button" class="btn btn-primary" id="submission">Submit</button>
         </form>
       </div>
     </div>
 
-
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-
-  <!-- Link to Moment.js -->
-  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  
-  <!-- Link to firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-
-<script>
-
-  var config = {
-    apiKey: "AIzaSyDfNKOO9uvFWZIe8Vqj7zbgoBO5YMcCDcQ",
-    authDomain: "traintimer-e3824.firebaseapp.com",
-    databaseURL: "https://traintimer-e3824.firebaseio.com",
-    projectId: "traintimer-e3824",
-    storageBucket: "traintimer-e3824.appspot.com",
-    messagingSenderId: "26054581488"
-  };
-
-    firebase.initializeApp(config);
-
-    // variable to reference the database.
-    var database = firebase.database();
-
-    var moment = require('moment');
-    moment().format();
-  
-  
-  var trainName = $("#trainName").val().trim();
-  var destination = $("#destination").val().trim();
-  var firstTrainTime = $("#firstTrainTime").val().trim().replace(/:/g, "");
-  var convertedTime = moment(firstTrainTime, HHmm);
-  var frequency = parseInt("#frequency");
-  
-
-  console.log(trainName + destination + firstTrainTime + convertedTime + frequency);
-
-  $("#submission").on("click", function() {
-
-      // var trainName = 
-
-      // sessionStorage.setItem(
-      //   trainName: trainName
-
-      // )
-
-    });
+  <script src="train.js"></script>
+</body>
 
 
 
 
-  
-  </script>
+
