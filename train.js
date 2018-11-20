@@ -13,11 +13,22 @@ $(document).ready(function(){
     // variable to reference the database.
     var database = firebase.database();
 
-    //  ("#arrivalTrain1").text();
-    //  ("#minutesTrain1").text();
+
+    // var nextTrain = 
+    //  ("#arrivalTrain1").text(moment.diff(moment(nextTrain)));
+    //  ("#minutesTrain1").text(nextTrain);
+
+    var currentdate = new Date();
+    var currentTime = "";
+    currentTime = currentdate.getHours() + ":" + currentdate.getMinutes();
 
 
-    $("#submission").click(function() {
+    setInterval(function() {
+        $("#currentTime").html(currentTime);   
+        }, 10000);
+
+
+    $("#submission").click(function(currentTime) {
         event.preventDefault();
 
         var trainName = $("#trainName").val();
@@ -26,9 +37,11 @@ $(document).ready(function(){
         var firstTrainTime = $("#firstTrainTime").val().trim();
         var convertedTime = $(moment(firstTrainTime, 'HH:mm'));
         var frequency = $(parseInt("#frequency"));
-        currentdate = new Date();
-        var currentTime = currentdate.getHours() + ":" + currentdate.getMinutes();
-        console.log(currentTime);
+        
+        
+        
+
+            
 
         // var trainName = 
 
