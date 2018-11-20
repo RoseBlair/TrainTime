@@ -89,6 +89,7 @@
             <label for="frequency">Frequency(min)</label>
             <textarea class="form-control" id="frequency" rows="1"></textarea>
           </div>
+          <button type="submit" class="btn btn-primary" id="submission">Submit</button>
         </form>
       </div>
     </div>
@@ -119,8 +120,33 @@
 
     // variable to reference the database.
     var database = firebase.database();
+
+    var moment = require('moment');
+    moment().format();
   
   
+  var trainName = $("#trainName").val().trim();
+  var destination = $("#destination").val().trim();
+  var firstTrainTime = $("#firstTrainTime").val().trim().replace(/:/g, "");
+  var convertedTime = moment(firstTrainTime, HHmm);
+  var frequency = parseInt("#frequency");
   
+
+  console.log(trainName + destination + firstTrainTime + convertedTime + frequency);
+
+  $("#submission").on("click", function() {
+
+      // var trainName = 
+
+      // sessionStorage.setItem(
+      //   trainName: trainName
+
+      // )
+
+    });
+
+
+
+
   
   </script>
