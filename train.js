@@ -11,14 +11,34 @@ $(document).ready(function(){
     firebase.initializeApp(config);
 
     // variable to reference the database.
-    var database = firebase.database();
+    var trainData = firebase.database();
+
+
+    $("#submission").on("click", function() {
+        var trainName = $("#trainName").val().trim();
+        var destination = $("#destination").val().trim();
+        var firstTrainTime = moment($("#firstTrainTime").val().trim(), "HH:mm").subtract(10, "years").format("X");
+        var frequency = $("#frequency").val().trim();
+
+        var newTrain = {
+            trainName: trainName,
+            destination: destination, 
+            frequency: frequency, 
+            firstTrainTime: firstTrainTime
+        }
+        
+        trainData.ref().push(newTrain);
+    });
+
 
      
-function getNextTrainTime(freqTrain1, firstTrainTime) {
+function getNextTrainTime(frequency, firstTrainTime) {
 
     var freqTrain1 = parseInt($("#freqTrain1").text());
     console.log($("#freqTrain1").text());
     console.log(freqTrain1);
+
+    var firstTrainTime = "3:00";
 
     var firstTrainTimeConverted = moment(firstTrainTime, "hh:mm").subtract(1, "years");
 
@@ -42,10 +62,26 @@ function getNextTrainTime(freqTrain1, firstTrainTime) {
 
 
 
-var firstTrainTime = "3:00";
 
-var metroNorth = {name:"Fiat", model:"500", firstTrainTime: 3:00};
-        
+// ,
+// {
+// trainName:"Trainy McTrainface", 
+// destination:"Wiltshire", 
+// frequency: 3, 
+// firstTrainTime: "03:00"
+// },
+// {
+// trainName: "The Rumbler",
+// desination: "Terminus",
+// frequency: 45,
+// firstTrainTime: "03:00"
+// }
+
+
+
+$('#yourDivName').append('yourtHTML');
+
+
 
     //Show the arrival of the next train and the minutes to the next train in HTML. 
 
