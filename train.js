@@ -31,7 +31,6 @@ $(document).ready(function(){
     });
 
     trainData.ref().on("child_added", function(snapshot) {
-       
     
     var firstTrainTime = snapshot.val().firstTrainTime;
     var trainName = snapshot.val().trainName;
@@ -48,11 +47,9 @@ $(document).ready(function(){
 
     var nextTrain = moment().add(minutesLeft, "minutes").format("HH:mm");
 
-    
-    console.log(minutesLeft);
-    console.log(nextTrain);
+    // console.log(minutesLeft);
+    // console.log(nextTrain);
 
-    
     $("#trainTable > tBody").append("<tr><td>"+trainName+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+nextTrain+"</td><td>"+minutesLeft+"</td></tr>");
 
     })
