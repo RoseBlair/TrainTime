@@ -53,7 +53,7 @@ $(document).ready(function(){
     console.log(nextTrain);
 
     
-    $("#trainTable > tBody").append("<tr><td>+trainName+</td><td>+destination+</td><td>+frequency+</td><td>minutesLeft</td><td>nextTrain</td></tr>");
+    $("#trainTable > tBody").append("<tr><td>"+trainName+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+nextTrain+"</td><td>"+minutesLeft+"</td></tr>");
 
     })
 
