@@ -1,3 +1,5 @@
+// Initialize Firebase app
+
 $(document).ready(function(){
     var config = {
         apiKey: "AIzaSyDfNKOO9uvFWZIe8Vqj7zbgoBO5YMcCDcQ",
@@ -13,12 +15,16 @@ $(document).ready(function(){
     // variable to reference the database.
     var trainData = firebase.database();
 
+    // When submit is clicked, take the value of the inputs and assign them to variables
 
     $("#submission").on("click", function() {
         var trainName = $("#trainName").val().trim();
         var destination = $("#destination").val().trim();
         var firstTrainTime = moment($("#firstTrainTime").val().trim(), "HH:mm").subtract(10, "years").format("X");
         var frequency = $("#frequency").val().trim();
+
+    
+    // Update the database
 
         var newTrain = {
             trainName: trainName,
@@ -30,12 +36,17 @@ $(document).ready(function(){
          trainData.ref().push(newTrain);
     });
 
+    //When database information is added, define variables 
+
     trainData.ref().on("child_added", function(snapshot) {
     
     var firstTrainTime = snapshot.val().firstTrainTime;
     var trainName = snapshot.val().trainName;
     var destination = snapshot.val().destination; 
     var frequency = snapshot.val().frequency; 
+
+    // run data through an algorithm to find train times
+
 
     var firstTrainTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
 
@@ -47,8 +58,8 @@ $(document).ready(function(){
 
     var nextTrain = moment().add(minutesLeft, "minutes").format("HH:mm");
 
-    // console.log(minutesLeft);
-    // console.log(nextTrain);
+     
+    // Append the variables to the HTML
 
     $("#trainTable > tBody").append("<tr><td>"+trainName+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+nextTrain+"</td><td>"+minutesLeft+"</td></tr>");
 
