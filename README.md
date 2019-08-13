@@ -6,7 +6,7 @@
 
 Make your own train schedule using input fields. 
 
-Input first train time and frequency to find out when the next train runs. 
+Input first train time and frequency and let Train Time tell you when you can expect your next train.  
 
 This app uses Firebase, jQuery, and Bootstrap.
 
